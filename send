@@ -1,0 +1,9 @@
+#!/bin/bash
+
+clear
+
+mvn clean install -B
+rm dependency-reduced-pom.xml
+
+echo $@
+java -jar target/webhook.jar "$@"

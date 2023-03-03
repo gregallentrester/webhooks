@@ -1,0 +1,16 @@
+#!/bin/bash -p
+
+
+echo;echo $1; echo
+meta=$(date +"%T")
+
+all="$1 | \n$meta"
+
+### EGG: curl https://hooks.slack.com/services/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 -d  '{  "text": "Hello, world." }'
+
+curl -X POST \
+  -H 'Content-type: application/json' \
+  -d '{"text":"'"$all"'"}' \
+  https://hooks.slack.com/services/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
+
+echo
